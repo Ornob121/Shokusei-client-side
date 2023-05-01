@@ -27,7 +27,7 @@ const Header = () => {
           to="/about"
           className={({ isActive }) => (isActive ? "text-red-500" : "")}
         >
-          About
+          About Us
         </NavLink>
         <NavLink
           to="/login"
