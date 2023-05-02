@@ -32,7 +32,7 @@ const ChefRecipes = () => {
                 {data.like}
               </p>
               <p className="pb-3 text-xl">
-                Numbers of recipes :{" "}
+                Number of recipes :{" "}
                 <span className="text-red-500">{data.num_of_recipes}</span>
               </p>
             </div>

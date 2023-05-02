@@ -4,9 +4,16 @@ import "@smastrom/react-rating/style.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Recipe = ({ recipe }) => {
   const [favorite, setFavorite] = useState(false);
+
+  const handleFavourite = () => {
+    setFavorite(true);
+    return toast("Added as favorite!");
+  };
   console.log(favorite);
   console.log(recipe);
   const { name, ingredients, cookingMethod, rating } = recipe;
@@ -14,7 +21,7 @@ const Recipe = ({ recipe }) => {
     <div className=" shadow-2xl w-[650px] rounded-lg mx-auto p-10">
       <div className="flex items-center mb-5">
         <h2 className="text-5xl flex-1 text-slate-400">{name}</h2>
-        <button onClick={() => setFavorite(true)} disabled={favorite}>
+        <button onClick={handleFavourite} disabled={favorite}>
           {" "}
           <FontAwesomeIcon
             className={`text-red-400 text-3xl cursor-pointer ${
@@ -23,6 +30,7 @@ const Recipe = ({ recipe }) => {
             icon={faHeart}
           />{" "}
         </button>
+        <ToastContainer />
       </div>
       <div className="flex">
         <Rating

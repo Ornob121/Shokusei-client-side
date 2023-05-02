@@ -16,7 +16,7 @@ const Chefs = ({ chef }) => {
         <span className="text-blue-400">{years_of_experience}</span> Years
       </p>
       <p className="pb-3">
-        Numbers of recipes :{" "}
+        Number of recipes :{" "}
         <span className="text-red-500">{num_of_recipes}</span>
       </p>
       <p className="pb-4">
