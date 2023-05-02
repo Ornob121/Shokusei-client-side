@@ -12,7 +12,7 @@ const Login = () => {
     setViewPass(!viewPass);
   };
   return (
-    <div className="mx-auto w-[480px] bg-slate-100 text-center mt-5">
+    <div className="mx-auto w-[480px] bg-slate-100 text-center my-5">
       <div className="bg-white drop-shadow-xl p-10">
         <h2 className="text-2xl font-bold pb-3">Login to your account</h2>
         <p className="mb-7">
@@ -26,13 +26,9 @@ const Login = () => {
           <img className="h-12 w-28 rounded-sm" src={github} alt="" />
         </div>
         <div className="grid grid-cols-3 items-center mt-6">
-          <p>
-            <hr />
-          </p>
+          <hr />
           <p className="text-2xl text-slate-400">or</p>
-          <p>
-            <hr />
-          </p>
+          <hr />
         </div>
         <form>
           <div>

@@ -11,8 +11,26 @@ const SingUp = () => {
   const showPass = () => {
     setViewPass(!viewPass);
   };
+
+  const [error, setError] = useState("");
+
+  const handleSingUp = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+    const name = form.name.value;
+    setError("");
+    if (password.length < 6) {
+      return setError("Your password should be more than 6 characters");
+    }
+    form.reset();
+    console.log(email, password, photo, name);
+  };
+
   return (
-    <div className="mx-auto w-[480px] bg-slate-100 text-center mt-5">
+    <div className="mx-auto w-[480px] bg-slate-100 text-center my-5">
       <div className="bg-white drop-shadow-xl p-10">
         <h2 className="text-2xl font-bold pb-3">Sign up for free!</h2>
 
@@ -21,15 +39,12 @@ const SingUp = () => {
           <img className="h-12 w-28 rounded-sm" src={github} alt="" />
         </div>
         <div className="grid grid-cols-3 items-center mt-6">
-          <p>
-            <hr />
-          </p>
+          <hr />
           <p className="text-2xl text-slate-400">or</p>
-          <p>
-            <hr />
-          </p>
+          <hr />
         </div>
-        <form>
+        <p className="text-red-500">{error}</p>
+        <form onSubmit={handleSingUp}>
           <div>
             <label className="label">
               <span className="label-text">Name</span>
@@ -90,12 +105,6 @@ const SingUp = () => {
                 icon={faEyeSlash}
               />
             )}
-
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
           </div>
           <div className="flex items-center">
             <input
