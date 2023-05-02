@@ -1,10 +1,26 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import Chefs from "../Chefs/Chefs";
 
 const ChefCards = () => {
+  const navigation = useNavigation();
+
+  if (navigation.state === "loading") {
+    return (
+      <div className="text-center">
+        <progress className="progress w-96"></progress>
+        <br />
+        <progress className="progress w-96"></progress>
+        <br />
+        <progress className="progress w-96"></progress>
+        <br />
+        <progress className="progress w-96"></progress>
+      </div>
+    );
+  }
+
   const chefs = useLoaderData();
-  //   console.log(chefs);
+
   return (
     <div className="my-16">
       <h2 className="text-center text-red-500 text-3xl font-semibold pb-5">

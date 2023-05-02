@@ -1,11 +1,27 @@
 import React from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useNavigation } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Recipe from "../Recipe/Recipe";
 
 const ChefRecipes = () => {
+  const navigation = useNavigation();
+
+  if (navigation.state === "loading") {
+    return (
+      <div className="text-center">
+        <progress className="progress w-96"></progress>
+        <br />
+        <progress className="progress w-96"></progress>
+        <br />
+        <progress className="progress w-96"></progress>
+        <br />
+        <progress className="progress w-96"></progress>
+      </div>
+    );
+  }
+
   const navigate = useNavigate();
   const data = useLoaderData();
   console.log(data);
