@@ -32,6 +32,30 @@ const SingUp = () => {
         <form>
           <div>
             <label className="label">
+              <span className="label-text">Name</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="input input-bordered w-full"
+              required
+              name="name"
+            />
+          </div>
+          <div>
+            <label className="label">
+              <span className="label-text">Photo</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Photo URL"
+              className="input input-bordered w-full"
+              required
+              name="photo"
+            />
+          </div>
+          <div>
+            <label className="label">
               <span className="label-text">Email</span>
             </label>
             <input
@@ -73,7 +97,7 @@ const SingUp = () => {
               </a>
             </label>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <input
               type="checkbox"
               name="checkbox"
@@ -93,10 +117,10 @@ const SingUp = () => {
             </label>
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Login</button>
+            <input className="btn btn-primary" type="submit" value="SignUp" />
           </div>
           <p className="mt-4">
-            <Link to="/signup" className="text-blue-500 underline font-light">
+            <Link to="/login" className="text-blue-500 underline font-light">
               Already have an account?
             </Link>
           </p>
