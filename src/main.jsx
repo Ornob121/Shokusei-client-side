@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 import Home from "./components/Home/Home";
+import ChefRecipes from "./components/ChefRecipes/ChefRecipes";
 
 const router = createBrowserRouter([
   {
@@ -15,13 +16,20 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/chefs"),
       },
       {
-        path: "/login",
+        path: "chefs/:id",
+        element: <ChefRecipes></ChefRecipes>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/chefs/${params.id}`),
+      },
+      {
+        path: "login",
         element: <Login></Login>,
       },
       {
-        path: "/signup",
+        path: "signup",
         element: <SignUp></SignUp>,
       },
     ],

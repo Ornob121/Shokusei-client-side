@@ -3,7 +3,7 @@ import Banner from "../Banner/Banner";
 import home1 from "../../../public/home1.png";
 import home2 from "../../../public/home2.png";
 import home3 from "../../../public/home3.png";
-import chef from "../../../public/chef.png";
+import ChefCards from "../ChefCards/ChefCards";
 
 const Home = () => {
   return (
@@ -37,6 +37,7 @@ const Home = () => {
           </div>
         </div>
       </Banner>
+      <ChefCards></ChefCards>
     </div>
   );
 };
