@@ -30,10 +30,18 @@ const Footer = () => {
         <div className="flex flex-col items-center">
           <img className="w-52" src={logo} alt="" />
           <div className="flex">
-            <img className="rounded w-7 mr-4" src={fb} alt="" />
-            <img className="rounded w-7 mr-4" src={instagram} alt="" />
-            <img className="rounded w-7 mr-4" src={twitter} alt="" />
-            <img className="rounded w-7" src={yt} alt="" />
+            <a href="https://facebook.com" target="_blank">
+              <img className="rounded w-7 mr-4" src={fb} alt="" />
+            </a>
+            <a href="https://instagram.com" target="_blank">
+              <img className="rounded w-7 mr-4" src={instagram} alt="" />
+            </a>
+            <a href="https://twitter.com" target="_blank">
+              <img className="rounded w-7 mr-4" src={twitter} alt="" />
+            </a>
+            <a href="https://youtube.com" target="_blank">
+              <img className="rounded w-7" src={yt} alt="" />
+            </a>
           </div>
         </div>
         <div className="flex flex-col text-white mx-auto">
