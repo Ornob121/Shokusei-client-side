@@ -23,7 +23,7 @@ import f5 from "../../../public/reviews/f5.png";
 const Reviews = () => {
   const [customerReviews, setCustomerReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://assignment-10-server-ornob121.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setCustomerReviews(data));
   }, []);
