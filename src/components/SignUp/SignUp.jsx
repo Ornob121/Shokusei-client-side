@@ -1,18 +1,51 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import google from "../../../public/icons/google.png";
 import github from "../../../public/icons/github.png";
+import { AuthContext } from "../../providers/AuthProvider";
+import { reload, updateProfile } from "firebase/auth";
 
 const SingUp = () => {
+  const { createUser, googleSignIn, gitHubSignIn } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
   const [viewPass, setViewPass] = useState(false);
   const showPass = () => {
     setViewPass(!viewPass);
   };
 
   const [error, setError] = useState("");
+
+  const handleGoogleSingIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const newUser = result.user;
+        console.log(newUser);
+        navigate("/", { replace: true });
+        toast("SignUp Successful");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+  const handleGitHubSignIn = () => {
+    gitHubSignIn()
+      .then((result) => {
+        const newUser = result.user;
+        console.log(newUser);
+        navigate("/", { replace: true });
+        toast("SignUp Successful");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   const handleSingUp = (event) => {
     event.preventDefault();
@@ -25,7 +58,46 @@ const SingUp = () => {
     if (password.length < 6) {
       return setError("Your password should be more than 6 characters");
     }
-    form.reset();
+
+    if (!email || !password) {
+      setError("Your email and password cannot be empty");
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        const newUser = result.user;
+
+        // ! Updating the user name an photo url
+        if (name || photo) {
+          updateProfile(newUser, {
+            displayName: name,
+            photoURL: photo,
+          })
+            .then((res) => {
+              console.log(res);
+              window.location.reload("/");
+            })
+            .catch((err) => {
+              console.log(err.message);
+            });
+        }
+
+        console.log(newUser);
+        form.reset();
+        setError("");
+        navigate("/", { replace: true });
+        toast("SignUp Successful");
+      })
+      .catch((err) => {
+        console.log(err.message);
+        if (err.message.includes("invalid-email")) {
+          setError("Your email is not valid");
+        }
+        if (err.message.includes("email-already-in-use")) {
+          setError("This email is already in use");
+        }
+      });
+
     console.log(email, password, photo, name);
   };
 
@@ -35,8 +107,18 @@ const SingUp = () => {
         <h2 className="text-2xl font-bold pb-3">Sign up for free!</h2>
 
         <div className="flex items-center justify-around">
-          <img className="h-12 w-32" src={google} alt="" />
-          <img className="h-12 w-28 rounded-sm" src={github} alt="" />
+          <img
+            onClick={handleGoogleSingIn}
+            className="h-12 w-32 cursor-pointer"
+            src={google}
+            alt=""
+          />
+          <img
+            className="h-12 w-28 rounded-sm cursor-pointer"
+            src={github}
+            onClick={handleGitHubSignIn}
+            alt=""
+          />
         </div>
         <div className="grid grid-cols-3 items-center mt-6">
           <hr />
@@ -53,7 +135,6 @@ const SingUp = () => {
               type="text"
               placeholder="Your Name"
               className="input input-bordered w-full"
-              required
               name="name"
             />
           </div>
@@ -65,7 +146,6 @@ const SingUp = () => {
               type="text"
               placeholder="Photo URL"
               className="input input-bordered w-full"
-              required
               name="photo"
             />
           </div>
