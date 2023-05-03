@@ -26,13 +26,13 @@ const ChefCards = () => {
       <h2 className="text-center text-red-500 text-3xl font-semibold pb-5">
         Chefs
       </h2>
-      <p className="text-center px-96 mb-10">
+      <p className="text-center md:px-96 px-10 mb-10">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
         tempore molestiae ipsa? Exercitationem, nemo quo quis eos numquam
         obcaecati, architecto blanditiis, magni debitis libero fugiat
         reprehenderit. Commodi, tempora. Delectus, illum?
       </p>
-      <div className="grid grid-cols-3 gap-7">
+      <div className="grid md:grid-cols-3 gap-7 md:mt-0 mt-10">
         {chefs.map((chef) => (
           <Chefs key={chef.id} chef={chef}></Chefs>
         ))}

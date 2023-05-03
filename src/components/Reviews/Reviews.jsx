@@ -29,7 +29,7 @@ const Reviews = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 mb-40">
+    <div className="grid md:grid-cols-2 grid-cols-1 mb-40">
       <div className="bg-img">
         <div className="flex justify-evenly pt-[500px] pb-16 items-center">
           <img className="w-[98px] h-6" src={f1} alt="" />
@@ -42,7 +42,9 @@ const Reviews = () => {
         <h5 className="text-red-400 text-xl text-center font-semibold pt-16">
           Testimonial
         </h5>
-        <h3 className="text-6xl pt-4 font-medium text-center">Happy Users</h3>
+        <h3 className="md:text-6xl text-3xl pt-4 font-medium text-center">
+          Happy Users
+        </h3>
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -60,7 +62,9 @@ const Reviews = () => {
           {customerReviews.map((review, i) => (
             <SwiperSlide key={i}>
               <div className="text-center">
-                <p className="pb-20">{review.review_description}</p>
+                <p className="pb-20 md:text-base text-sm">
+                  {review.review_description}
+                </p>
                 <Rating
                   style={{ maxWidth: 100 }}
                   value={Math.round(review.rating)}

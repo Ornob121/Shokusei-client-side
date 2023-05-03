@@ -11,26 +11,28 @@ const Home = () => {
   return (
     <div className="">
       <Banner>
-        <div className="bg-zinc-100 pt-[100px] pb-[150px] px-24 grid grid-cols-2 gap-16">
+        <div className="bg-zinc-100 pt-[100px] pb-[150px] md:px-24 px-7 grid md:grid-cols-2 gap-16">
           <div className="grid grid-cols-3 gap-5 banner-home">
             <img
-              className=" w-auto h-96 relative bottom-10"
+              className=" w-auto md:h-96 h-52 relative bottom-10"
               src={home2}
               alt=""
             />
-            <img className="w-auto h-[425px]" src={home1} alt="" />
+            <img className="w-auto md:h-[425px] h-64" src={home1} alt="" />
             <img
-              className="w-auto h-72 relative bottom-10"
+              className="w-auto md:h-72 h-44 relative bottom-10"
               src={home3}
               alt=""
             />
           </div>
           <div>
-            <h2 className="text-red-500 font-semibold text-xl">SHOKUSEI</h2>
-            <h1 className="text-[80px] text-slate-600">
+            <h2 className="text-red-500 text-center md:text-left font-semibold text-xl">
+              SHOKUSEI
+            </h2>
+            <h1 className="md:text-[80px] text-[40px] text-center md:text-left text-slate-600">
               Japanese Cuisines & Recipes
             </h1>
-            <p className="text-[gray]">
+            <p className="text-[gray] md:text-base text-xs text-center md:text-left md:pt-0 pt-5">
               Here you can find top Japanese chefs and their top recipes for
               free so that you can try it at home with ease. Lorem ipsum dolor
               sit amet consectetur adipisicing elit. Aperiam aut ipsam nam vitae

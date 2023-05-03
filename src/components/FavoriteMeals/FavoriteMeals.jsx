@@ -9,7 +9,7 @@ const FavoriteMeals = () => {
       <h5 className="text-red-400 text-xl text-center font-semibold pt-16">
         Peoples Choice
       </h5>
-      <h3 className="text-6xl pt-4 font-medium text-center">
+      <h3 className="md:text-6xl text-3xl pt-4 font-medium text-center">
         Most Favorite Recipes
       </h3>
       <p className="text-center text-[gray] pt-8 mb-5">
@@ -17,15 +17,15 @@ const FavoriteMeals = () => {
         tempor <br />
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
       </p>
-      <div className="flex px-24 gap-6 pt-5 pb-44">
-        <div className="mx-auto text-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 md:px-24 px-10 md:mt-0 gap-6 pt-5 pb-44">
+        <div className="mx-auto text-center md:mt-0 mt-12">
           <img
             className="h-[282px] mx-auto duration-500 hover:scale-125"
             src={fav1}
             alt=""
           />
           <h4 className="text-3xl tracking-wide pt-10">Tonkotsu Ramen</h4>
-          <p className="text-[gray] text-lg tracking-wider pt-5">
+          <p className="text-[gray] text-lg tracking-wider pt-5 md:mb-0 mb-5">
             Lorem ipsum dolor sit amet, consectetur <br />
             adipiscing elit.
           </p>
