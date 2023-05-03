@@ -7,4 +7,4 @@
 - Authentication system is also available here
 - This was creating using server
 
-## Live Site: https://shokusei-8ed6e.web.app/chefs/8
+## Live Site: https://shokusei-8ed6e.web.app/
