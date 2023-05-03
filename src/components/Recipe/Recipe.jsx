@@ -43,7 +43,7 @@ const Recipe = ({ recipe }) => {
       <p className="text-red-400 text-xl mt-4">Ingredients:</p>
       <div className="pb-5 pl-28 text-[gray]">
         {ingredients.map((ingredient, i) => (
-          <li>{ingredient}</li>
+          <li key={i}>{ingredient}</li>
         ))}
       </div>
       <h5 className="text-blue-800 text-2xl">Cooking Method:</h5>

@@ -2,6 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Chefs = ({ chef }) => {
   const navigate = useNavigate();
@@ -9,7 +11,7 @@ const Chefs = ({ chef }) => {
   const { id, like, name, picture, num_of_recipes, years_of_experience } = chef;
   return (
     <div className="w-[310px] text-center shadow-2xl rounded-lg mx-auto">
-      <img className="w-[309px] h-96 pb-4" src={picture} alt="" />
+      <LazyLoadImage effect="blur" src={picture} />
       <h3 className="text-2xl pb-2 text-slate-400">{name}</h3>
       <p className="pb-2">
         Years of experience:{" "}

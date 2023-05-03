@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Recipe from "../Recipe/Recipe";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ChefRecipes = () => {
   const navigation = useNavigation();
@@ -30,10 +31,11 @@ const ChefRecipes = () => {
       <Banner>
         <div className="bg-zinc-100 pt-[100px] pb-[150px] px-24 grid grid-cols-2 gap-16 items-center">
           <div>
-            <img
+            <LazyLoadImage
               className=" w-auto shadow-lg h-72 mx-auto relative bottom-10"
               src={data.picture}
               alt="Chefs picture"
+              effect="blur"
             />
             <div className="flex justify-evenly">
               <p className="pb-2 text-xl">
