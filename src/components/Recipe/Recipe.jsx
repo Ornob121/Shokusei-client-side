@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Recipe = ({ recipe }) => {
   const [favorite, setFavorite] = useState(false);
 
-  const handleFavourite = () => {
+  const handleFavorite = () => {
     setFavorite(true);
     return toast("Added as favorite!");
   };
@@ -21,11 +21,11 @@ const Recipe = ({ recipe }) => {
     <div className=" shadow-2xl w-[650px] rounded-lg mx-auto p-10">
       <div className="flex items-center mb-5">
         <h2 className="text-5xl flex-1 text-slate-400">{name}</h2>
-        <button onClick={handleFavourite} disabled={favorite}>
+        <button onClick={handleFavorite} disabled={favorite}>
           {" "}
           <FontAwesomeIcon
-            className={`text-red-400 text-3xl cursor-pointer ${
-              favorite ? "text-red-100" : ""
+            className={` text-3xl cursor-pointer ${
+              favorite ? "text-red-100" : "text-red-500"
             }`}
             icon={faHeart}
           />{" "}

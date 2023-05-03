@@ -1,14 +1,13 @@
 import React from "react";
-import { FaceFrownIcon } from "@heroicons/react/24/solid";
-
 import { Link, useRouteError } from "react-router-dom";
+import errorPic from "../../../public/404.png";
 
 const ErrorPage = () => {
   const { error, status } = useRouteError();
   return (
-    <section className="flex items-center h-screen p-16 bg-gray-100 text-gray-900">
+    <section className="flex items-center p-16 h-screen bg-zinc-100 text-gray-900">
       <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-        <FaceFrownIcon className="w-40 h-40 text-red-500" />
+        <img src={errorPic} className="rounded-xl h-48" alt="" />
         <div className="max-w-md text-center">
           <h2 className="mb-8 font-extrabold text-9xl text-red-500">
             <span className="sr-only">Error</span>
