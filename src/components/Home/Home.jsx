@@ -5,6 +5,7 @@ import home2 from "../../../public/home2.png";
 import home3 from "../../../public/home3.png";
 import ChefCards from "../ChefCards/ChefCards";
 import FavoriteMeals from "../FavoriteMeals/FavoriteMeals";
+import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
   return (
@@ -40,6 +41,7 @@ const Home = () => {
       </Banner>
       <ChefCards></ChefCards>
       <FavoriteMeals></FavoriteMeals>
+      <Reviews></Reviews>
     </div>
   );
 };

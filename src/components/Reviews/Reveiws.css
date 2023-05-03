@@ -1,0 +1,56 @@
+.bg-img {
+  background: rgba(0, 0, 0, 0.5) url("../../../public/reviews/review-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-blend-mode: darken;
+}
+
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: gray !important;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 80%;
+  height: 50%;
+}
+
+.swiper-pagination-bullet {
+  display: none !important;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: rgb(244 244 245);
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
