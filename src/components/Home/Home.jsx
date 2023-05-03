@@ -14,7 +14,7 @@ const Home = () => {
         <div className="bg-zinc-100 pt-[100px] pb-[150px] md:px-24 px-7 grid md:grid-cols-2 gap-16">
           <div className="grid grid-cols-3 gap-5 banner-home">
             <img
-              className=" w-auto md:h-96 h-52 relative bottom-10"
+              className=" w-[105%] md:h-96 h-56 md:mx-0 mx-auto relative bottom-10"
               src={home2}
               alt=""
             />
