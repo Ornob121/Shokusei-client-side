@@ -10,6 +10,7 @@ import ChefRecipes from "./components/ChefRecipes/ChefRecipes";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import AuthProvider from "./providers/AuthProvider";
 import PrivateRoute from "./Private/PrivateRoute";
+import Blog from "./components/Blog";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
     ],
   },
