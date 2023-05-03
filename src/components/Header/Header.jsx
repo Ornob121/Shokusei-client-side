@@ -27,11 +27,7 @@ const Header = () => {
       <nav className="md:px-24 px-7 flex justify-between items-center bg-zinc-100">
         <Link to="/">
           {" "}
-          <img
-            className="w-32 pt-8 md:text-4xl absolute md:static mx-auto top-2 text-2xl font-bold"
-            src={logo}
-            alt=""
-          />
+          <img className="w-32 pt-8 " src={logo} alt="" />
         </Link>
 
         <div className="text-xl flex items-center nav-link ">
@@ -39,7 +35,7 @@ const Header = () => {
             className={`md:flex md:static absolute items-center ${
               isMenuOpen
                 ? "-top-56 right-4"
-                : "top-8 right-4 bg-yellow-300 md:bg-[rgba(126,144,254,0.01)] p-4"
+                : "top-8 left-52 relative bg-red-300 rounded-lg p-4"
             } duration-500`}
           >
             <li>
@@ -106,7 +102,7 @@ const Header = () => {
               <FontAwesomeIcon icon={faBars} />
             ) : (
               <FontAwesomeIcon
-                className="relative -top-1 left-16"
+                className=" absolute top-12 right-6"
                 icon={faXmark}
               />
             )}
