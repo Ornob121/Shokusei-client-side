@@ -11,6 +11,7 @@ import ErrorPage from "./components/ErrorPage/ErrorPage";
 import AuthProvider from "./providers/AuthProvider";
 import PrivateRoute from "./Private/PrivateRoute";
 import Blog from "./components/Blog";
+import About from "./components/About";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
     ],
   },

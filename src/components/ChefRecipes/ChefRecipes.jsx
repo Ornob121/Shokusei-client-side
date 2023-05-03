@@ -35,7 +35,6 @@ const ChefRecipes = () => {
               className=" w-auto shadow-lg h-72 mx-auto relative bottom-10"
               src={data.picture}
               alt="Chefs picture"
-              effect="blur"
             />
             <div className="flex justify-evenly">
               <p className="pb-2 text-xl">

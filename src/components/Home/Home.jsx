@@ -4,10 +4,11 @@ import home1 from "../../../public/home1.png";
 import home2 from "../../../public/home2.png";
 import home3 from "../../../public/home3.png";
 import ChefCards from "../ChefCards/ChefCards";
+import FavoriteMeals from "../FavoriteMeals/FavoriteMeals";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Banner>
         <div className="bg-zinc-100 pt-[100px] pb-[150px] px-24 grid grid-cols-2 gap-16">
           <div className="grid grid-cols-3 gap-5 banner-home">
@@ -38,6 +39,7 @@ const Home = () => {
         </div>
       </Banner>
       <ChefCards></ChefCards>
+      <FavoriteMeals></FavoriteMeals>
     </div>
   );
 };

@@ -22,7 +22,7 @@ const ChefCards = () => {
   const chefs = useLoaderData();
 
   return (
-    <div className="my-16">
+    <div className="py-16 bg-[whitesmoke] bg-opacity-25">
       <h2 className="text-center text-red-500 text-3xl font-semibold pb-5">
         Chefs
       </h2>

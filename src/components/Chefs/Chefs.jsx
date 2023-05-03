@@ -10,7 +10,7 @@ const Chefs = ({ chef }) => {
 
   const { id, like, name, picture, num_of_recipes, years_of_experience } = chef;
   return (
-    <div className="w-[310px] text-center shadow-2xl rounded-lg mx-auto">
+    <div className="w-[310px] text-center shadow-2xl rounded-lg mx-auto bg-white">
       <LazyLoadImage effect="blur" src={picture} />
       <h3 className="text-2xl pb-2 text-slate-400">{name}</h3>
       <p className="pb-2">
