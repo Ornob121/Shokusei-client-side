@@ -35,7 +35,7 @@ const Header = () => {
             className={`md:flex md:static absolute items-center ${
               isMenuOpen
                 ? "-top-56 right-4"
-                : "top-8 left-52 relative bg-red-300 rounded-lg p-4"
+                : "top-8 left-12 relative bg-red-300 rounded-lg p-4"
             } duration-500`}
           >
             <li>
@@ -101,10 +101,7 @@ const Header = () => {
             {isMenuOpen ? (
               <FontAwesomeIcon icon={faBars} />
             ) : (
-              <FontAwesomeIcon
-                className=" absolute top-12 right-6"
-                icon={faXmark}
-              />
+              <FontAwesomeIcon className=" absolute top-12" icon={faXmark} />
             )}
           </span>
         </div>

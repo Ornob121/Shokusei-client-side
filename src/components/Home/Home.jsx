@@ -26,14 +26,14 @@ const Home = () => {
             />
           </div>
           <div>
-            <h2 className="text-red-500 text-center md:text-left font-semibold text-xl">
+            <h2 className="text-red-500 text-center md:text-left font-semibold text-xl md:pl-2">
               SHOKUSEI
             </h2>
-            <h1 className="md:text-[80px] text-[40px] text-center md:text-left text-slate-600">
+            <h1 className="md:text-[70px] md:tracking-wide text-[40px] text-center md:text-left text-slate-600">
               Japanese Cuisines & Recipes
             </h1>
             <p className="text-[gray] md:text-base text-xs text-center md:text-left md:pt-0 pt-5">
-              Here you can find top Japanese chefs and their top recipes for
+              Here you will find top Japanese chefs and their top recipes for
               free so that you can try it at home with ease. Lorem ipsum dolor
               sit amet consectetur adipisicing elit. Aperiam aut ipsam nam vitae
               dignissimos dicta cum, optio sed debitis accusantium.
